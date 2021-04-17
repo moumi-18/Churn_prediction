@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Churn Predictive Model</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{url_for('predict')}}" method="post">
+			<input type="text" name="tenure" placeholder="tenure" required="required" />
+			<input type="text" name="MonthlyCharges" placeholder="MonthlyCharges" required="required" />
+            <input type="text" name="TotalCharges" placeholder="TotalCharges" required="required" />
+		    
+			<h3>What Is the Gender?</h3>
+            			<select name="Gender_Type" id="Gender" required="required">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+
+            <h3>Are you A Senior Citizen</h3>
+            <select name="Senior Citizen" id="resea" required="required">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            
+            <h3>Partner Type</h3>
+            <select name="Partner" id="research" required="required">
+              <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <h3>Dependent</h3>
+            <select name="Dependent" id="research" required="required">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+
+            <h3>Phone_Service</h3>
+            <select name="Phone_Service" id="research" required="required">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+            
+            <h3>MultipleLines</h3>
+            <select name="MultipleLines" id="research" required="required">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+
+            <h3>InternetService</h3>
+            <select name="InternetService" id="research" required="required">
+              <option value="0">DSL</option>
+              <option value="1">Fiber optic</option>
+              <option value="2">No</option>
+            </select>
+
+            <h3>OnlineSecurity</h3>
+            <select name="OnlineSecurity" id="research" required="required">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+
+            <h3>OnlineBackup</h3>
+            <select name="OnlineBackup" id="research" required="required">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+
+            <h3>DeviceProtection</h3>
+            <select name="DeviceProtection" id="research" required="required">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+             
+            <h3>TechSupport</h3>
+            <select name="TechSupport" id="research" required="required">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+            
+            <h3>StreamingTV</h3>
+            <select name="StreamingTV" id="research" required="required">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+            
+            <h3>StreamingMovies</h3>
+            <select name="StreamingMovies" id="research" required="required">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+            
+            <h3>Contract</h3>
+            <select name="Contract" id="research" required="required">
+              <option value="0">Month-to-month</option>
+              <option value="1">One year</option>
+              <option value="2">Two year</option>
+            </select>
+            
+            <h3>PaperlessBilling</h3>
+            <select name="PaperlessBilling" id="research" required="required">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+            
+            <h3>PaymentMethod</h3>
+            <select name="PaymentMethod" id="research" required="required">
+              <option value="2">Electronic check</option>
+              <option value="3">Mailed check</option>
+              <option value="0">Bank transfer</option>
+              <option value="1">Credit card</option>
+            </select>
+
+            	
+            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
+            <br>
+
+        </form>
+
+
+
+        <br><br>
+		{{ prediction_text }}
+    </div>
+  
+</body>
+
+</html>
